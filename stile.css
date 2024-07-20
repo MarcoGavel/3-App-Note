@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --color-design: rgb(238, 189, 54);
+    --color-drag: rgba(238, 189, 54, 0.6);
+    --color-font-base: #333;
+    --color-font-gray-light: #999;
+    --color-gray-bg: rgb(231, 231, 231);
+    --color-gray-ccc: #ccc;
+    --color-search-placeholder: rgb(255, 254, 248);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-font-base);
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.drag {
+    background-color: var(--color-drag) !important;
+    color: white;
+}
+i {
+    cursor: pointer;
+}
+#note-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: var(--color-gray-bg);
+    padding: 2rem;
+}
+#ricerca-note {
+    position: fixed;
+    inset: 0 0 calc(100vh - 50px);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ricerca {
+    border: none;
+    outline: none;
+    padding: 0.4rem 1.2rem;
+    background: var(--color-gray-ccc);
+    width: 80%;
+    color: white;
+    border-radius: 2rem;
+    font-weight: bold;
+}
+#ricerca::placeholder {
+    font-weight: normal;
+    color: var(--color-search-placeholder);
+}
+#note {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: flex-start;
+    grid-gap: 1rem;
+    height: calc(100vh - 140px);
+    margin-top: 50px;
+}
+#note > .nota {
+    background: white;
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+}
+
+#controlli {
+    position: fixed;
+    inset: calc(100vh - 60px) 0 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+#sound-btn {
+    color: var(--color-design);
+}
+#new-note-btn {
+    border: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: var(--color-design);
+    color: white;
+    border-radius: 50%;
+}
+
+#new-note-wrapper {
+    position: fixed;
+    inset: 0;
+    padding: 5vh 5vw;
+    background: white;
+    transition: all .5s;
+}
+
+#new-note-wrapper.close {
+    margin-left: 100vw;
+}
+#new-note-wrapper.open {
+    margin-left: 0;  
+}
+#new-note-titolo-wrapper, #new-note-testo-wrapper {
+    width: 100%;
+}
+#new-note-titolo {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 0.6rem;
+    border-bottom: 1px solid var(--color-gray-ccc);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+#new-note-testo {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 0.6rem;
+    resize: none;
+    height: 60vh !important;
+}
+#save-close-wrapper {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}

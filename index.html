@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Note</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+
+<body>
+    <section id="note-wrapper">
+        <section id="ricerca-note">
+            <input type="text" id="ricerca" placeholder="Cerca nota ...">
+        </section>
+
+        <section id="note">
+            <div id="nota-1" draggable="true" data-drag="false" class="nota show">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Prima nota</p>
+
+            </div>
+            <div id="nota-2" draggable="true" data-drag="false" class="nota show">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Seconda nota</p>
+
+            </div>
+            <div id="nota-3" draggable="true" data-drag="false" class="nota show">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Terza nota</p>
+
+            </div>
+            <div id="nota-4" draggable="true" data-drag="false" class="nota show">
+                <i class="fas fa-arrows-alt"></i>
+                <p>Quarta nota</p>
+
+            </div>
+        </section>
+
+        <section id="controlli">
+            <i id="sound-btn" class="fas fa-volume-up attivo"></i>
+            <i id="trash-btn" class="fas fa-trash"></i>
+            <button id="new-note-btn">+</button>
+        </section>
+
+    </section>
+
+    <section id="new-note-wrapper" class="close">
+        <div id="new-note-titolo-wrapper">
+            <input type="text" id="new-note-titolo" placeholder="Titolo *">
+        </div>
+        <div id="new-note-testo-wrapper">
+            <textarea id="new-note-testo" spellcheck="false" placeholder="Digita qui la tua nota..."></textarea>
+        </div>
+        <div id="save-close-wrapper">
+            <i id="close-note-btn" class="fas fa-times"></i>
+            <i id="save-note-btn" class="fas fa-check"></i>
+        </div>
+
+    </section>
+</body>
+
+</html>
