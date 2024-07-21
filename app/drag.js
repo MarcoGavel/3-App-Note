@@ -17,35 +17,36 @@ export default class Drag {
 
     trashOverEvent(e) {
         e.preventDefault()
-        this.CONF.trashBtn.style.color = "red"
+        this.CONF.trashBtn.classList.add("color-trash-dragover")
     }
 
     trashLeaveEvent() {
-        this.CONF.trashBtn.style.color = "#333"
+        this.CONF.trashBtn.classList.remove("color-trash-dragover")
     }
 
     trashDropEvent(e) {
         e.preventDefault()
-        this.CONF.trashBtn.style.color = "#333"
-        const notaInDrag = document.querySelector("div[data-drag=true]")
-        this.CONF.noteWrapper.removeChild(notaInDrag)
+        this.CONF.trashBtn.classList.remove("color-trash-dragover")
+        this.CONF.noteWrapper.removeChild(this.CONF.notaInDrag)
         this.CONF.note = this.CONF.note.filter(nota => nota != notaInDrag)
         console.log(this.CONF.note)
     }
 
     dragStartEvent(e) {
-        e.target.dataset.drag = "true"
+        this.CONF.notaInDrag = e.target
+        e.target.classList.add("drag")
     }
 
     dragEndEvent(e) {
-        e.target.dataset.drag = "false"
+        this.CONF.notaInDrag = null
+        e.target.classList.remove("drag")
         if(this.CONF.soundBtn.dataset.sound === "1") {
             this.CONF.sound.play()
         }
     }
 
     dragOverEvent(e) {
-        const notaInDrag = document.querySelector("div[data-drag=true]")
+        const notaInDrag = this.CONF.notaInDrag
         const notaDaSostituire = this.getSubstituteNote(e)
         if(notaInDrag == notaDaSostituire) return
         

@@ -8,6 +8,7 @@
     --color-gray-bg: rgb(231, 231, 231);
     --color-gray-ccc: #ccc;
     --color-search-placeholder: rgb(255, 254, 248);
+    --color-trash-dragover: crimson;
 }
 * {
     box-sizing: border-box;
@@ -30,6 +31,9 @@ body, html {
 .drag {
     background-color: var(--color-drag) !important;
     color: white;
+}
+#trash-btn.color-trash-dragover {
+    color: var(--color-trash-dragover);
 }
 i {
     cursor: pointer;
